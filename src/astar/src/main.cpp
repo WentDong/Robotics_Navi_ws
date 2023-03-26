@@ -150,7 +150,7 @@ int main(int argc, char * argv[])
     ros::init(argc, argv, "astar");
     ros::NodeHandle n;
 
-
+ 
     geometry_msgs::PointStamped astar_step;
 
     // Subscribe topics
