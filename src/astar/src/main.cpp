@@ -80,7 +80,7 @@ void MapCallback(const nav_msgs::OccupancyGrid& msg)
 void StartPointCallback(const geometry_msgs::PoseWithCovarianceStamped& msg)
 {
     Point2d src_point = Point2d(msg.pose.pose.position.x, msg.pose.pose.position.y);
-    src_point = Point2d(-8.804, 1.949);
+    // src_point = Point2d(-8.804, 1.949);
     World2MapGrid(MapParam,src_point, MapParam.StartPoint);
     cout<<"StartPoint:"<<MapParam.StartPoint<<endl;
 }
@@ -88,7 +88,7 @@ void StartPointCallback(const geometry_msgs::PoseWithCovarianceStamped& msg)
 void TargetPointtCallback(const geometry_msgs::PoseStamped& msg)
 {
     Point2d src_point = Point2d(msg.pose.position.x, msg.pose.position.y);
-    src_point = Point2d(1.386, -1);
+    // src_point = Point2d(1.386, -1);
     World2MapGrid(MapParam,src_point, MapParam.TargetPoint);
     int p =Maptest.at<uchar>(MapParam.TargetPoint.x, MapParam.TargetPoint.y);
     cout<<"flag:"<<p<<endl;
