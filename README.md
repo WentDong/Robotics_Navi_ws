@@ -18,3 +18,24 @@ source ./devel/setup.bash
 
 
 
+#### Start
+
+-   Environment settings:
+
+	```bash
+	export TURTLEBOT3_MODEL=waffle
+	```
+
+-   Model requirement:
+    -   unzip `model.tar.gz` in the folder `~/.gazabo`, and **rename** the folder extracted as `models`
+
+-   Open the virtual environment
+
+    ```bash
+    roslaunch turtlebot3_gazebo turtlebot3_world_small_bringup.launch
+    ```
+    
+    Turn off the wire will accelerate the process.
+    
+-   
+
