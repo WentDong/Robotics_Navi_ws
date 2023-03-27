@@ -6,6 +6,7 @@ Course Project of AI3702 of SJTU, 2023 Spring
 ```bash
 sudo apt-get install ros-melodic-tf2-sensor-msgs
 sudo apt-get install ros-melodic-navigation
+sudo apt install ros-melodic-gmapping
 ```
 
 #### Build
