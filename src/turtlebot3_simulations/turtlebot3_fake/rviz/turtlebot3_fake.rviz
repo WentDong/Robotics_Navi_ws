@@ -193,9 +193,9 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
-      Topic: /initialpose
+      Topic: /move_base/NavfnROS/Astar/initialpose
     - Class: rviz/SetGoal
-      Topic: /move_base_simple/goal
+      Topic: /move_base/NavfnROS/Astar/target
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point

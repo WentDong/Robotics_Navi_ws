@@ -487,7 +487,7 @@ AmclNode::AmclNode() :
                                                              nh_);
   laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived,
                                                    this, _1));
-  initial_pose_sub_ = nh_.subscribe("initialpose", 2, &AmclNode::initialPoseReceived, this);
+  initial_pose_sub_ = nh_.subscribe("/move_base/NavfnROS/Astar/initialpose", 2, &AmclNode::initialPoseReceived, this);
 
   if(use_map_topic_) {
     map_sub_ = nh_.subscribe("map", 1, &AmclNode::mapReceived, this);
@@ -663,7 +663,7 @@ void AmclNode::reconfigureCB(AMCLConfig &config, uint32_t level)
   laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived,
                                                    this, _1));
 
-  initial_pose_sub_ = nh_.subscribe("initialpose", 2, &AmclNode::initialPoseReceived, this);
+  initial_pose_sub_ = nh_.subscribe("/move_base/NavfnROS/Astar/initialpose", 2, &AmclNode::initialPoseReceived, this);
 }
 
 

@@ -304,7 +304,7 @@ Visualization Manager:
       Shaft Length: 0.5
       Shaft Radius: 0.0500000007
       Shape: Arrow
-      Topic: /move_base_simple/goal
+      Topic: /move_base/NavfnROS/Astar/target
       Unreliable: false
       Value: true
     - Class: rviz/Marker
@@ -380,9 +380,9 @@ Visualization Manager:
       Hide Inactive Objects: true
     - Class: rviz/Select
     - Class: rviz/SetInitialPose
-      Topic: /initialpose
+      Topic: /move_base/NavfnROS/Astar/initialpose
     - Class: rviz/SetGoal
-      Topic: /move_base_simple/goal
+      Topic: /move_base/NavfnROS/Astar/target
     - Class: rviz/Measure
     - Class: rviz/PublishPoint
       Single click: true
