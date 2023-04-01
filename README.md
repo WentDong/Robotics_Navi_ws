@@ -6,7 +6,7 @@ Course Project of AI3702 of SJTU, 2023 Spring
 ```bash
 sudo apt-get install ros-melodic-tf2-sensor-msgs
 sudo apt-get install ros-melodic-navigation
-sudo apt install ros-melodic-gmapping
+sudo apt-get install ros-melodic-gmapping
 ```
 
 #### Build
@@ -21,22 +21,38 @@ source ./devel/setup.bash
 
 #### Start
 
--   Environment settings:
+-   Model requirement:
 
-	```bash
-	export TURTLEBOT3_MODEL=waffle
+  -   unzip `model.tar.gz` in the folder `~/.gazabo`, and **rename** the folder extracted as `models`
+
+
+
+-   Building Map
+
+    ```sh
+    sh buildmap.sh
+    ```
+
+
+-   Saving Map
+
+	```sh
+	sh savemap.sh
 	```
 
--   Model requirement:
-    -   unzip `model.tar.gz` in the folder `~/.gazabo`, and **rename** the folder extracted as `models`
+-   Navigation 
 
--   Open the virtual environment
-
-    ```bash
-    roslaunch turtlebot3_gazebo turtlebot3_world_small_bringup.launch
+    ```sh
+    sh Navigation.sh
     ```
-    
-    Turn off the wire will accelerate the process.
-    
--   
 
+#### Remark
+
+​	The commands in shell is wriiten for **zsh**, for **bash** or other kinds of shell, please **change all the zsh to bash** and 
+
+
+
+# TODOS
+
+-   Have an issue during process of slam. Laser and Map can't be shown in RVIZ properly.
+-   Something else.
