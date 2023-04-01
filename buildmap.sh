@@ -1,17 +1,17 @@
-tmux new-session -d -s "Env"
-tmux send-keys -t "Env" "cd ~/Robotics_Navi_sws; 
-    source ./devel/setup.zsh; 
-    export TURTLEBOT3_MODEL=waffle; 
-    roslaunch turtlebot3_gazebo turtlebot3_world_small_bringup.launch;
-    exit;
-    exec zsh" C-m
-    sleep 5
-
 tmux new-session -d -s "Slam"
 tmux send-keys -t "Slam" "cd ~/Robotics_Navi_sws; 
     source ./devel/setup.zsh; 
     export TURTLEBOT3_MODEL=waffle; 
     roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping;
+    exit;
+    exec zsh" C-m
+    sleep 5
+
+tmux new-session -d -s "Env"
+tmux send-keys -t "Env" "cd ~/Robotics_Navi_sws; 
+    source ./devel/setup.zsh; 
+    export TURTLEBOT3_MODEL=waffle; 
+    roslaunch turtlebot3_gazebo turtlebot3_world_small_bringup.launch;
     exit;
     exec zsh" C-m
     sleep 5
