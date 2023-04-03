@@ -1,14 +1,5 @@
-tmux new-session -d -s "Slam"
-tmux send-keys -t "Slam" "cd ~/Robotics_Navi_sws; 
-    source ./devel/setup.zsh; 
-    export TURTLEBOT3_MODEL=waffle; 
-    roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping;
-    exit;
-    exec zsh" C-m
-    sleep 5
-
 tmux new-session -d -s "Env"
-tmux send-keys -t "Env" "cd ~/Robotics_Navi_sws; 
+tmux send-keys -t "Env" "cd ~/Robotics_Navi_ws; 
     source ./devel/setup.zsh; 
     export TURTLEBOT3_MODEL=waffle; 
     roslaunch turtlebot3_gazebo turtlebot3_world_small_bringup.launch;
@@ -16,8 +7,27 @@ tmux send-keys -t "Env" "cd ~/Robotics_Navi_sws;
     exec zsh" C-m
     sleep 5
 
+tmux new-session -d -s "Slam"
+tmux send-keys -t "Slam" "cd ~/Robotics_Navi_ws; 
+    source ./devel/setup.zsh; 
+    export TURTLEBOT3_MODEL=waffle; 
+    roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping;
+    exit;
+    exec zsh" C-m
+    sleep 5
+tmux kill-session -t Slam
+
+sleep 1
+tmux new-session -d -s "Slam"
+tmux send-keys -t "Slam" "cd ~/Robotics_Navi_ws; 
+    source ./devel/setup.zsh; 
+    export TURTLEBOT3_MODEL=waffle; 
+    roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping;
+    exit;
+    exec zsh" C-m
+    sleep 5
 tmux new-session -d -s "Teleop"
-tmux send-keys -t "Teleop" "cd ~/Robotics_Navi_sws; 
+tmux send-keys -t "Teleop" "cd ~/Robotics_Navi_ws; 
     source ./devel/setup.zsh; 
     export TURTLEBOT3_MODEL=waffle; 
     roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch;

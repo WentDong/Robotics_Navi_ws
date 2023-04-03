@@ -126,7 +126,7 @@ class FakeOdomNode
       filter_->registerCallback(boost::bind(&FakeOdomNode::update, this, _1));
 
       // subscription to "2D Pose Estimate" from RViz:
-      m_initPoseSub = new message_filters::Subscriber<geometry_msgs::PoseWithCovarianceStamped>(nh, "/move_base/NavfnROS/Astar/initialpose", 1);
+      m_initPoseSub = new message_filters::Subscriber<geometry_msgs::PoseWithCovarianceStamped>(nh, "initialpose", 1);
       m_initPoseFilter = new tf2_ros::MessageFilter<geometry_msgs::PoseWithCovarianceStamped>(*m_initPoseSub, *m_tfBuffer, global_frame_id_, 1, nh);
       m_initPoseFilter->registerCallback(boost::bind(&FakeOdomNode::initPoseReceived, this, _1));
     }

@@ -1,7 +1,8 @@
 
 <launch>
+  <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
 
-    <node pkg="map_server" name="map_server" type="map_server" args="$(find astar)/maps/small_house.yaml"/>
+	<node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
     <node pkg="astar" type="astar" name="astar" output="screen">
     </node>

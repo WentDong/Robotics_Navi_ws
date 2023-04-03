@@ -124,11 +124,11 @@ double calc_d(Point x, Point Target){
     return sqrt((x.x - Target.x)*(x.x-Target.x) + (x.y - Target.y)*(x.y - Target.y));
 }
 bool unreachable(Point y){
-    double threshold = 0.65;
-    double inflating = 3;
-    for (int i =-3;i<=3;i++){
-        for (int j=-3;j<=3;j++){
-            if (i* i + j* j >9) continue;
+    double threshold = 0.8;
+    int inflating = 7;
+    for (int i =-inflating;i<=inflating;i++){
+        for (int j=-inflating;j<=inflating;j++){
+            if (i* i + j* j >inflating*inflating) continue;
             if (y.x+i<0 || y.y+j<0 || y.x+i>=MapParam.width || y.y+j >= MapParam.height) continue;
             if (y.x==MapParam.StartPoint.x && y.y==MapParam.StartPoint.y) continue;
             if (Maptest.at<uchar>(y.x+i, y.y+j)< 255 * threshold)
@@ -145,6 +145,10 @@ struct cmp{
         return a.x<b.x || (a.x==b.x & a.y<b.y);
     }
 }; 
+map<Point, int, cmp> mp;
+vector<Point> PathList;
+priority_queue<pair<int, int> > Q;
+vector<node> node_list;
 int main(int argc, char * argv[])
 {
     ros::init(argc, argv, "astar");
@@ -163,20 +167,44 @@ int main(int argc, char * argv[])
     ros::Rate loop_rate(20);
     nav_msgs::Path plan_path;
 
-    vector<Point> PathList;
+
     Point Last_Start;
     Point Last_Target;
-    map<Point, int, cmp> mp;
 
     while(ros::ok())
     {
+        if (MapParam.StartPoint != Last_Start && MapParam.TargetPoint == Last_Target){
+            bool flag = 0;
+            for (int i=0;i<PathList.size();i++)
+                if (PathList[i].x == MapParam.StartPoint.x && PathList[i].y == MapParam.StartPoint.y)
+                    {
+                        ROS_INFO("%d\n", PathList.size());
+                        PathList.erase(PathList.begin(), PathList.begin()+i);
+                        ROS_INFO("i:%d, %d\n", i, PathList.size());
+                        PathGrid2world(MapParam, PathList,plan_path);
+                        path_pub.publish(plan_path);
+                        ROS_INFO("CONTINUE PREVIOUS PATH!!");
+                        flag = 1;
+                        Last_Start = MapParam.StartPoint;
+                        break;
+                    }
+            if (flag) continue;
+        }
         if (MapParam.StartPoint != Last_Start || MapParam.TargetPoint != Last_Target){
+            ROS_INFO("Start Planning!");
+            Last_Start = MapParam.StartPoint;
+            Last_Target = MapParam.TargetPoint;
+            double dis = calc_d(Last_Start, Last_Target);
+            bool flag = 0;
+            if (dis > 250) flag = 1;
+            
             PathList.clear();
+            // map<Point, int, cmp > empty_map1;
+            // mp.swap(empty_map1);
             mp.clear();
+
             mp[MapParam.StartPoint] = 0;
             int tot = 1;
-            priority_queue<pair<int, int> > Q;
-            vector<node> node_list;
             node_list.clear();
             node_list.push_back(node(0,calc_d(MapParam.StartPoint, MapParam.TargetPoint), -1, MapParam.StartPoint));
 
@@ -204,19 +232,21 @@ int main(int argc, char * argv[])
                         if (g+h < node_list[idy].g + node_list[idy].h){
                             node_list[idy].g = g;
                             node_list[idy].h = h;
-                            Q.push(make_pair(-g, idy));
-                            // Q.push(make_pair(-g - h, idy));     
+                            if (!flag)
+                                Q.push(make_pair(-g, idy));
+                            else Q.push(make_pair(-g - h, idy));     
                         }
                     } else{
                         mp[y] = tot++;
                         node_list.push_back(node(g, h, idx, y));
-                        Q.push(make_pair(-g, tot-1));
-                        // Q.push(make_pair(-g-h, tot-1));
+                        if (!flag)
+                            Q.push(make_pair(-g, tot-1));
+                        else Q.push(make_pair(-g-h, tot-1));
                     }     
                 }
             }
             if (mp.find(MapParam.TargetPoint)==mp.end()){
-                ROS_ERROR("COULD NOT FIND A FEASIBLE PATH UNDER THIS OCCUPY THRESHOLD AND THIS INFLATING RADIUS!");
+                ROS_ERROR("COULD NOT FIND A FEASIBLE PATH UNDER THIS OCCUPY THRESHOLD AND THIS INFLATING RADIUS!, S(%d, %d), T(%d, %d)\n", MapParam.StartPoint.x, MapParam.StartPoint.y, MapParam.TargetPoint.x, MapParam.TargetPoint.y);
             }else{
                 PathList.clear();
                 for (int id = mp[MapParam.TargetPoint]; id >=0; ){
