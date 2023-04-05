@@ -25,8 +25,6 @@ source ./devel/setup.bash
 
   -   unzip `model.tar.gz` in the folder `~/.gazabo`, and **rename** the folder extracted as `models`
 
-
-
 -   Building Map
 
     ```sh
@@ -48,4 +46,11 @@ source ./devel/setup.bash
 
 #### Remark
 
-​	The commands in shell is wriiten for **zsh**, for **bash** or other kinds of shell, please **change all the zsh to bash** and 
+-   The commands in shell is wriiten for **zsh**, for **bash** or other kinds of shell, please **change all the zsh to bash**.
+
+-   We use `astar` written by ourselves, the `astar_sol` was used to debug and compare.
+
+#### Control
+
+-   **USE** `rqt` to set the value of topic `/move_base_simple/goal`
+
