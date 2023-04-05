@@ -179,7 +179,7 @@ int main(int argc, char * argv[])
                 if (PathList[i].x == MapParam.StartPoint.x && PathList[i].y == MapParam.StartPoint.y)
                     {
                         ROS_INFO("%d\n", PathList.size());
-                        PathList.erase(PathList.begin(), PathList.begin()+i);
+                        PathList.erase(PathList.begin(), PathList.begin()+i+1);
                         ROS_INFO("i:%d, %d\n", i, PathList.size());
                         PathGrid2world(MapParam, PathList,plan_path);
                         path_pub.publish(plan_path);
@@ -196,7 +196,7 @@ int main(int argc, char * argv[])
             Last_Target = MapParam.TargetPoint;
             double dis = calc_d(Last_Start, Last_Target);
             bool flag = 0;
-            if (dis > 250) flag = 1;
+            if (dis > 200) flag = 1;
             
             PathList.clear();
             // map<Point, int, cmp > empty_map1;
@@ -211,6 +211,7 @@ int main(int argc, char * argv[])
             while (! Q.empty()) Q.pop();
             Q.push(make_pair(calc_d(MapParam.StartPoint, MapParam.TargetPoint), 0));
             while (!Q.empty()){
+                bool flag_b = 0;
                 pair<int, int> p = Q.top();
                 Q.pop();
                 int idx = p.second;
@@ -242,14 +243,18 @@ int main(int argc, char * argv[])
                         if (!flag)
                             Q.push(make_pair(-g, tot-1));
                         else Q.push(make_pair(-g-h, tot-1));
-                    }     
+                    } 
+                    if (y==MapParam.TargetPoint) {
+                        flag_b = 1;
+                    }
                 }
+                if (flag_b) break;
             }
             if (mp.find(MapParam.TargetPoint)==mp.end()){
                 ROS_ERROR("COULD NOT FIND A FEASIBLE PATH UNDER THIS OCCUPY THRESHOLD AND THIS INFLATING RADIUS!, S(%d, %d), T(%d, %d)\n", MapParam.StartPoint.x, MapParam.StartPoint.y, MapParam.TargetPoint.x, MapParam.TargetPoint.y);
             }else{
                 PathList.clear();
-                for (int id = mp[MapParam.TargetPoint]; id >=0; ){
+                for (int id = mp[MapParam.TargetPoint]; id >0; ){
                     PathList.push_back(node_list[id].p);
                     id = node_list[id].pre;
                 }
@@ -258,7 +263,12 @@ int main(int argc, char * argv[])
                 path_pub.publish(plan_path);
                 ROS_INFO("Find a valid path successfully! Euclid Distance: %.3lf, Total Steps: %d\n", node_list[mp[MapParam.TargetPoint]].g, (int) (PathList.size()-1 ));
             }
-        } 
+        } else{
+            // PathList.erase(PathList.begin(), PathList.begin()+1);
+            PathGrid2world(MapParam, PathList,plan_path);
+            path_pub.publish(plan_path);
+            ROS_INFO("NO CHANGE! REPUB THE PATH!");
+        }
     //    PathGrid2world(MapParam, PathList,plan_path);
     //    path_pub.publish(plan_path);
 
