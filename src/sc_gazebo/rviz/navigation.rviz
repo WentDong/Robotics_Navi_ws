@@ -311,7 +311,7 @@ Visualization Manager:
       Shaft Length: 1
       Shaft Radius: 0.0500000007
       Shape: Arrow
-      Topic: /move_base/NavfnROS/Astar/target
+      Topic: /move_base_simple/goal
       Unreliable: false
       Value: false
     - Alpha: 1
@@ -375,9 +375,9 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
-      Topic: /move_base/NavfnROS/Astar/initialpose
+      Topic: /initialpose
     - Class: rviz/SetGoal
-      Topic: /move_base/NavfnROS/Astar/target
+      Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point

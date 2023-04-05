@@ -249,15 +249,6 @@
         </include>
         <pose frame=''>1.512301 -1.733438 0.041983 0.000000 0.000000 0.01000</pose>
 	</model>
-
-
-<!--        <model name='CoffeeTable_01_002'>
-        <include>
-            <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
-        </include>
-        <pose frame=''>-4.812301 -2.5733438 0.041983 0.000000 0.000000 0.01000</pose>
-        </model>-->
-
 	<model name='CookingBench_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_CookingBench_01</uri>
@@ -279,8 +270,6 @@
         </include>
         <pose frame=''>6.55269 0.951173 -0.000006 0 -0 -1.564130</pose>
 	</model>
-
-
 	<model name='ReadingDesk_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_ReadingDesk_01</uri>
@@ -294,6 +283,12 @@
         <pose frame=''>-0.556240 4.111241 0 0 -0 0</pose>
 	</model>
 
+	<model name='Door_01_001'>
+        <include>
+            <uri>model://aws_robomaker_residential_Door_01</uri>
+        </include>
+        <pose frame=''>6.001449 -5.549002 0 0 -0 0</pose>
+	</model>
 	
 	<!--model name='Dumbbell_01_001'>
         <include>
@@ -307,14 +302,30 @@
         </include>
         <pose frame=''>1.625142 -1.768086 0.843859 0 0 0</pose>
 	</model>
-
-
 	<!--model name='FitnessEquipment_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_FitnessEquipment_01</uri>
         </include>
         <pose frame=''>3.484720 3.169104 0.003168 0 -0 0</pose>
 	</model-->
+	<model name='FoldingDoor_01_001'>
+        <include>
+            <uri>model://aws_robomaker_residential_FoldingDoor_01</uri>
+        </include>
+        <pose frame=''>-0.564911 3.16333 0.041881 0 -0 1.583</pose>
+	</model>
+	<model name='FoldingDoor_01_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_FoldingDoor_01</uri>
+        </include>
+        <pose frame=''>2.92747 3.15614 0.041881 0 -0 1.57264</pose>
+	</model>
+	<model name='Handle_01_001'>
+        <include>
+            <uri>model://aws_robomaker_residential_Handle_01</uri>
+        </include>
+        <pose frame=''>5.724 -5.523 0.9938 0 -0 -3.1415</pose>
+	</model>
 	
     <model name='HouseWallB_01_001'>
         <include>
@@ -331,6 +342,19 @@
 	</model>
 
 
+    <model name='FoldingDoor_02_001'>
+        <include>
+            <uri>model://aws_robomaker_residential_FoldingDoor_02</uri>
+        </include>
+        <pose frame=''>4.674231 2.46451 0 0 -0 3.14159</pose>
+	</model>
+
+    <model name='FoldingDoor_02_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_FoldingDoor_02</uri>
+        </include>
+        <pose frame=''>4.8912 -4.84968 0 0 -0 0</pose>
+	</model>
 
 	<model name='KitchenCabinet_01_001'>
         <include>
@@ -436,7 +460,7 @@
 	</model-->
 
     <!-- DESK -->
-        <!--model name='DeskPortraitA_01'>
+	<!--model name='DeskPortraitA_01'>
         <include>
             <uri>model://aws_robomaker_residential_DeskPortraitA_01</uri>
         </include>
@@ -496,7 +520,7 @@
             <uri>model://aws_robomaker_residential_DeskPortraitB_02</uri>
         </include>
 	<pose frame=''>2.486270 -5.102525 -0.012660 -0.336621 0.000000 3.046798</pose>
-        </model-->
+	</model-->
     <!-- Wall & Desk Portraits END -->
 
 	<model name='Rangehood_01_001'>
@@ -568,18 +592,7 @@
         <pose frame=''>0.615509 -5.105954 -0.011049 0 -0 1.5700</pose>
         -->
         <pose frame=''>1.669509 -5.183576 -0.017049 0 -0 1.5792</pose>
-        </model>
-
-        <model name='TVCabinet_01_002'>
-        <include>
-            <uri>model://aws_robomaker_residential_TVCabinet_01</uri>
-        </include>
-        <!--
-        <pose frame=''>0.615509 -5.105954 -0.011049 0 -0 1.5700</pose>
-        -->
-        <pose frame=''>-4.669509 -5.183576 -0.017049 0 -0 1.5792</pose>
-        </model>
-
+	</model>
 	<model name='Vase_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Vase_01</uri>
@@ -801,6 +814,18 @@
     </light>
 <!--door-->
 
+    <model name='hinged_door_0'>
+        <include>
+            <uri>model://hinged_door</uri>
+        </include>
+        <pose frame=''>-2.69235 -0.382552 2e-06 1e-06 -0 0</pose>
+	</model>
+    <model name='hinged_door_1'>
+        <include>
+            <uri>model://hinged_door</uri>
+        </include>
+        <pose frame=''>-2.69928 -3.62062 2e-06 1e-06 -0 0</pose>
+	</model>
 <!--charging_pile-->
     <model name='charging_pile'>
         <include>
@@ -846,7 +871,7 @@
             <uri>model://wall_06</uri>
         </include>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        </model>
+	</model>
 
 <!-- actor -->
     <!-- <actor name="actor">

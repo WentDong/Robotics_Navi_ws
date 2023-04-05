@@ -42,5 +42,5 @@ if __name__ == '__main__':
         t_publish = rospy.Time.from_sec(float(rospy.myargv()[5]))
     rospy.init_node('pose_setter', anonymous=True)
     rospy.loginfo("Going to publish pose {} with stamp {} at {}".format(pose, t_stamp.to_sec(), t_publish.to_sec()))
-    pub = rospy.Publisher("/move_base/NavfnROS/Astar/initialpose", PoseWithCovarianceStamped, PoseSetter(pose, stamp=t_stamp, publish_time=t_publish), queue_size=1)
+    pub = rospy.Publisher("initialpose", PoseWithCovarianceStamped, PoseSetter(pose, stamp=t_stamp, publish_time=t_publish), queue_size=1)
     rospy.spin()
