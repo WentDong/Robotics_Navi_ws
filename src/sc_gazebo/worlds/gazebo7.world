@@ -82,25 +82,25 @@
     </model-->
 
 
-    <model name='AirconditionerA_01_001'>
+<!--    <model name='AirconditionerA_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_AirconditionerA_01</uri>
         </include>
         <pose frame=''>-9.199410 2.411230 2.084544 0 -0 0</pose>
 	</model>
-	
-	<model name='AirconditionerB_01_001'>
+        -->
+<!--	<model name='AirconditionerB_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_AirconditionerB_01</uri>
         </include>
         <pose frame=''>-2.004656 -5.226610 0.003485 0 -0 0</pose>
-	</model>
-	<model name='Ball_01_001'>
+        </model>-->
+<!--	<model name='Ball_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Ball_01</uri>
         </include>
         <pose frame=''>3.295503 4.225674 0.318684 0 -0 0</pose>
-	</model>
+        </model>-->
     
     <!-- quick test ball for turtlebot3 -->
     <!-- 
@@ -113,36 +113,42 @@
     -->
 
     <!-- bedroom ball -->
-    <model name='Ball_01_003'>
+<!--    <model name='Ball_01_003'>
         <include>
             <uri>model://aws_robomaker_residential_Ball_01</uri>
         </include>
         <pose frame=''>-6.945503 -4.22174 0.318684 0 -0 0</pose>
-	</model>
+        </model>-->
 	<model name='Bed_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Bed_01</uri>
         </include>
         <pose frame=''>-6.678232 2.030560 -0.000010 0 -0 0</pose>
 	</model>
-	<model name='NightStand_01_001'>
+        <model name='Bed_01_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_Bed_01</uri>
+        </include>
+        <pose frame=''>-6.678232 -2.330560 -0.000010 0 -0 0</pose>
+        </model>
+<!--	<model name='NightStand_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_NightStand_01</uri>
         </include>
         <pose frame=''>-8.501616 2.860420 0.005258 -0.000002 0 0</pose>
-	</model>
-	<model name='NightStand_01_002'>
+        </model>-->
+<!--	<model name='NightStand_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_NightStand_01</uri>
         </include>
         <pose frame=''>-4.842234 2.860420 0.005256 0 0.000002 0</pose>
-	</model>
-	<model name='Board_01_001'>
+        </model>-->
+<!--	<model name='Board_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Board_01</uri>
         </include>
         <pose frame=''>2.779073 -5.392703 1.538173 0 -0 0</pose>
-	</model>
+        </model>-->
 	
     <!-- Remove ceiling for easier view
 	<model name='RoomCeiling_01_001'>
@@ -150,119 +156,149 @@
             <uri>model://aws_robomaker_residential_RoomCeiling_01</uri>
         </include>
         <pose frame=''>0 0 2.5 0 -0 0</pose>
-	</model>
-    -->
+	</model>    -->
 	
-	<model name='ChairA_01_001'>
+<!--        <model name='ChairA_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_ChairA_01</uri>
         </include>
         <pose frame=''>7.11516 0.209028 0.024685 1e-06 -0 -1.55607</pose>
-	</model>
-	<!--model name='ChairA_01_002'>
+        </model>
+        <model name='ChairA_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_ChairA_01</uri>
         </include>
         <pose frame=''>6.25506 0.219468 0.011308 0 0 -1.50414</pose>
-	</model-->
-	<model name='ChairA_01_003'>
+        </model>-->
+<!--	<model name='ChairA_01_003'>
         <include>
             <uri>model://aws_robomaker_residential_ChairA_01</uri>
         </include>
         <pose frame=''>6.06678 1.68075 0.01 0 -0 1.56986</pose>
-	</model>
-	<model name='ChairA_01_004'>
+        </model>-->
+<!--	<model name='ChairA_01_004'>
         <include>
             <uri>model://aws_robomaker_residential_ChairA_01</uri>
         </include>
         <pose frame=''>7.00277 1.67074 0 0 -0 1.52363</pose>
-	</model>
-	<model name='ChairA_01_005'>
+        </model>-->
+<!--	<model name='ChairA_01_005'>
         <include>
             <uri>model://aws_robomaker_residential_ChairA_01</uri>
         </include>
         <pose frame=''>-8.500940 0.033744 0 0 0 1.57</pose>
-	</model>
-	<model name='ChairD_01_001'>
+        </model>-->
+<!--	<model name='ChairD_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_ChairD_01</uri>
         </include>
         <pose frame=''>-1.380775 4.104456 0 0 -0 0</pose>
-	</model>
-	<model name='ChairD_01_002'>
+        </model>-->
+<!--	<model name='ChairD_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_ChairD_01</uri>
         </include>
         <pose frame=''>0.325214 4.104456 0 0 -0 -3.138741</pose>
-	</model>
-    <model name='ChairD_01_003'>
+        </model>-->
+<!--    <model name='ChairD_01_003'>
         <include>
             <uri>model://aws_robomaker_residential_ChairD_01</uri>
         </include>
         <pose frame=''>-8.270775 -4.504456 0 0 -0 0.869673</pose>
-	</model>
-	<model name='Chandelier_01_001'>
+        </model>-->
+<!--	<model name='Chandelier_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Chandelier_01</uri>
         </include>
         <pose frame=''>1.221061 4.155740 3 0 -0 0</pose>
-	</model>
-       	<model name='Chandelier_01_002'>
+        </model>-->
+<!--       	<model name='Chandelier_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_Chandelier_01</uri>
         </include>
         <pose frame=''>-6.451061 1.069937 3 0 -0 0</pose>
-	</model>
-	<model name='Chandelier_01_003'>
+        </model>-->
+<!--	<model name='Chandelier_01_003'>
         <include>
             <uri>model://aws_robomaker_residential_Chandelier_01</uri>
         </include>
         <pose frame=''>7.824061 -1.59 3 0 -0 0</pose>
-	</model>
-    <model name='Chandelier_01_004'>
+        </model>-->
+<!--    <model name='Chandelier_01_004'>
         <include>
             <uri>model://aws_robomaker_residential_Chandelier_01</uri>
         </include>
         <pose frame=''>1.221061 -1.592040 3 0 -0 0</pose>
-	</model>
-	<model name='Carpet_01_001'>
+        </model>-->
+<!--	<model name='Carpet_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Carpet_01</uri>
         </include>
         <pose frame=''>0.785050 -1.106647 0.001106 0 -0 0</pose>
-	</model>
-    <model name='Carpet_01_002'>
+        </model>-->
+<!--    <model name='Carpet_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_Carpet_01</uri>
         </include>
         <pose frame=''>-6.674063 1.37515 0.000585 0 -0 1.57662</pose>
-	</model>
-	<model name='SecurityCamera_01_001'>
+        </model>-->
+<!--	<model name='SecurityCamera_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_SecurityCamera_01</uri>
         </include>
         <pose frame=''>0.842134 -4.996294 0.495067 0 -0 -2.841039</pose>
-	</model>
-	<model name='CoffeeTable_01_001'>
+        </model>-->
+        <model name='CoffeeTable_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
         </include>
-        <pose frame=''>1.512301 -1.733438 0.041983 0.000000 0.000000 0.01000</pose>
-	</model>
-	<model name='CookingBench_01_001'>
+        <pose frame=''>4.512301 -1.533438 0.041983 0.000000 0.000000 0.01000</pose>
+        </model>
+
+        <model name='CoffeeTable_01_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
+        </include>
+        <pose frame=''>2.512301 -1.533438 0.041983 0.000000 0.000000 0.01000</pose>
+        </model>
+
+        <model name='CoffeeTable_01_003'>
+        <include>
+            <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
+        </include>
+        <pose frame=''>6.512301 -1.533438 0.041983 0.000000 0.000000 0.01000</pose>
+        </model>
+
+
+        <model name='CoffeeTable_01_004'>
+        <include>
+            <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
+        </include>
+        <pose frame=''>2.512301 2.533438 0.041983 0.000000 0.000000 0.01000</pose>
+        </model>
+
+
+<!--        <model name='CoffeeTable_01_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_CoffeeTable_01</uri>
+        </include>
+        <pose frame=''>-4.812301 -2.5733438 0.041983 0.000000 0.000000 0.01000</pose>
+        </model>-->
+
+<!--	<model name='CookingBench_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_CookingBench_01</uri>
         </include>
         <pose frame=''>9.038383 -3.351140 0.903610 0 -0 3.137133</pose>
         <static> true </static>
-	</model>
+        </model>-->
 
-	<model name='Curtain_01_001'>
+<!--	<model name='Curtain_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Curtain_01</uri>
         </include>
         <pose frame=''>-9.172642 0.203760 0 0 -0 0</pose>
-	</model>
+        </model>-->
     
 	<model name='KitchenTable_01_001'>
         <include>
@@ -270,25 +306,21 @@
         </include>
         <pose frame=''>6.55269 0.951173 -0.000006 0 -0 -1.564130</pose>
 	</model>
-	<model name='ReadingDesk_01_001'>
+
+
+<!--	<model name='ReadingDesk_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_ReadingDesk_01</uri>
         </include>
         <pose frame=''>-8.523185 -0.715262 0 0 0 1.57</pose>
-	</model>
-	<model name='BalconyTable_01_001'>
+        </model>-->
+<!--	<model name='BalconyTable_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_BalconyTable_01</uri>
         </include>
         <pose frame=''>-0.556240 4.111241 0 0 -0 0</pose>
-	</model>
+        </model>-->
 
-	<model name='Door_01_001'>
-        <include>
-            <uri>model://aws_robomaker_residential_Door_01</uri>
-        </include>
-        <pose frame=''>6.001449 -5.549002 0 0 -0 0</pose>
-	</model>
 	
 	<!--model name='Dumbbell_01_001'>
         <include>
@@ -296,36 +328,20 @@
         </include>
         <pose frame=''>2.512849 2.717787 0.002183 0 -0 0</pose>
 	</model-->
-	<model name='Tablet_01_001'>
+<!--	<model name='Tablet_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Tablet_01</uri>
         </include>
         <pose frame=''>1.625142 -1.768086 0.843859 0 0 0</pose>
-	</model>
+        </model>-->
+
+
 	<!--model name='FitnessEquipment_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_FitnessEquipment_01</uri>
         </include>
         <pose frame=''>3.484720 3.169104 0.003168 0 -0 0</pose>
 	</model-->
-	<model name='FoldingDoor_01_001'>
-        <include>
-            <uri>model://aws_robomaker_residential_FoldingDoor_01</uri>
-        </include>
-        <pose frame=''>-0.564911 3.16333 0.041881 0 -0 1.583</pose>
-	</model>
-	<model name='FoldingDoor_01_002'>
-        <include>
-            <uri>model://aws_robomaker_residential_FoldingDoor_01</uri>
-        </include>
-        <pose frame=''>2.92747 3.15614 0.041881 0 -0 1.57264</pose>
-	</model>
-	<model name='Handle_01_001'>
-        <include>
-            <uri>model://aws_robomaker_residential_Handle_01</uri>
-        </include>
-        <pose frame=''>5.724 -5.523 0.9938 0 -0 -3.1415</pose>
-	</model>
 	
     <model name='HouseWallB_01_001'>
         <include>
@@ -342,19 +358,6 @@
 	</model>
 
 
-    <model name='FoldingDoor_02_001'>
-        <include>
-            <uri>model://aws_robomaker_residential_FoldingDoor_02</uri>
-        </include>
-        <pose frame=''>4.674231 2.46451 0 0 -0 3.14159</pose>
-	</model>
-
-    <model name='FoldingDoor_02_002'>
-        <include>
-            <uri>model://aws_robomaker_residential_FoldingDoor_02</uri>
-        </include>
-        <pose frame=''>4.8912 -4.84968 0 0 -0 0</pose>
-	</model>
 
 	<model name='KitchenCabinet_01_001'>
         <include>
@@ -362,14 +365,14 @@
         </include>
         <pose frame=''>8.002009 -3.836509 0.012068 0 -0 -3.140001</pose>
 	</model>
-	<model name='KitchenUtensils_01_001'>
+<!--	<model name='KitchenUtensils_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_KitchenUtensils_01</uri>
         </include>
         <pose frame=''>9.285478 -5.021261 1.141805 0 -0 0</pose>
-	</model>
+        </model>-->
 	
-	<model name='LightC_01_001'>
+<!--	<model name='LightC_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_LightC_01</uri>
         </include>
@@ -380,7 +383,7 @@
             <uri>model://aws_robomaker_residential_LightC_01</uri>
         </include>
         <pose frame=''>-0.138245 -5.4443710 2.000000 0 -0 0</pose>
-	</model>
+        </model>-->
 	
     <!-- 
     Wall & Desk Portraits: 
@@ -460,7 +463,7 @@
 	</model-->
 
     <!-- DESK -->
-	<!--model name='DeskPortraitA_01'>
+        <!--model name='DeskPortraitA_01'>
         <include>
             <uri>model://aws_robomaker_residential_DeskPortraitA_01</uri>
         </include>
@@ -520,58 +523,58 @@
             <uri>model://aws_robomaker_residential_DeskPortraitB_02</uri>
         </include>
 	<pose frame=''>2.486270 -5.102525 -0.012660 -0.336621 0.000000 3.046798</pose>
-	</model-->
+        </model-->
     <!-- Wall & Desk Portraits END -->
 
-	<model name='Rangehood_01_001'>
+<!--	<model name='Rangehood_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Rangehood_01</uri>
         </include>
         <pose frame=''>9.019794 -3.369940 1.507605 0 -0 0</pose>
-	</model>
+        </model>-->
 	
-	<model name='Refrigerator_01_001'>
+<!--        <model name='Refrigerator_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Refrigerator_01</uri>
         </include>
         <pose frame=''>8.70686 -1.59753 0 0 0 -1.5635</pose>
-	</model>
-	<model name='SeasoningBox_01_001'>
+        </model>-->
+<!--	<model name='SeasoningBox_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_SeasoningBox_01</uri>
         </include>
         <pose frame=''>9.107968 -2.651726 0.902458 -0.000006 0.000034 0.001290</pose>
-	</model>
-	<model name='ShoeRack_01_001'>
+        </model>-->
+<!--	<model name='ShoeRack_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_ShoeRack_01</uri>
         </include>
         <pose frame=''>4.297978 -5.173566 0 0 -0 0</pose>
-	</model>
+        </model>-->
 	<model name='SofaC_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_SofaC_01</uri>
         </include>
         <pose frame=''>0.775898 -0.411153 0.065992 -0.000464 -0.000071 0.005614</pose>
 	</model>
-	<model name='Tableware_01_001'>
+<!--	<model name='Tableware_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Tableware_01</uri>
         </include>
         <pose frame=''>7.15317 0.982767 0.817812 -0.001238 -0.000976 1.02476</pose>
-	</model>
+        </model>-->
 	<!--model name='Trash_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Trash_01</uri>
         </include>
         <pose frame=''>2.360151 -0.796238 0.011 0 -0 0</pose>
 	</model-->
-    <model name='Trash_01_002'>
+<!--    <model name='Trash_01_002'>
         <include>
             <uri>model://aws_robomaker_residential_Trash_01</uri>
         </include>
         <pose frame=''>-7.716621 -0.712000 0.000903 0 0 0</pose>
-	</model>
+        </model>-->
 	<!-- <model name='TV_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_TV_01</uri>
@@ -592,13 +595,24 @@
         <pose frame=''>0.615509 -5.105954 -0.011049 0 -0 1.5700</pose>
         -->
         <pose frame=''>1.669509 -5.183576 -0.017049 0 -0 1.5792</pose>
-	</model>
-	<model name='Vase_01_001'>
+        </model>
+
+        <model name='TVCabinet_01_002'>
+        <include>
+            <uri>model://aws_robomaker_residential_TVCabinet_01</uri>
+        </include>
+        <!--
+        <pose frame=''>0.615509 -5.105954 -0.011049 0 -0 1.5700</pose>
+        -->
+        <pose frame=''>-4.669509 -5.183576 -0.017049 0 -0 1.5792</pose>
+        </model>
+
+<!--	<model name='Vase_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Vase_01</uri>
         </include>
         <pose frame=''>3.055663 -5.413080 1.574958 0.000003 0.001700 0.000840</pose>
-	</model>`
+        </model>`-->
 	<!--model name='RoomWall_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_RoomWall_01</uri>
@@ -608,12 +622,12 @@
 	
 
 	
-	<model name='Wardrobe_01_001'>
+<!--	<model name='Wardrobe_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_Wardrobe_01</uri>
         </include>
         <pose frame=''>-3.146710 2.476204 0.000704 0 -0 -1.569673</pose>
-	</model>
+        </model>-->
         <model name='RoomWindow_01_001'>
         <include>
             <uri>model://aws_robomaker_residential_RoomWindow_01</uri>
@@ -667,13 +681,13 @@
             <uri>model://aws_robomaker_residential_RoomWindow_01</uri>
         </include>
         <pose frame=''>-2.396624 4.387607 0.502739 0 -0 0</pose>
-	</model>
-	<model name='coke_can'>
+        </model>
+<!--	<model name='coke_can'>
         <include>
             <uri>model://coke_can</uri>
         </include>
         <pose frame=''>5.88042 0.992299 0.815892 -0.0112 0.004087 -0.111696</pose>
-	</model>
+        </model>-->
     <!-- Lights !-->
     <!--
     <light name='sun' type='directional'>
@@ -690,7 +704,7 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
     !-->
-    <light name='LivingRoom_CeilingLight_0' type='point'>
+<!--    <light name='LivingRoom_CeilingLight_0' type='point'>
       <pose frame=''>1.194296 4.155759 2.2 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
@@ -702,7 +716,7 @@
       </attenuation>
       <cast_shadows>0</cast_shadows>
       <direction>0 0 -1</direction>
-    </light>
+    </light>-->
     <light name='LivingRoom_CeilingLight_1' type='point'>
       <pose frame=''>1.194296 -1.589959 2.2 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
@@ -716,7 +730,7 @@
       <cast_shadows>0</cast_shadows>
       <direction>0 0 -1</direction>
     </light>
-    <light name='LivingRoom_WallLight_0' type='point'>
+<!--    <light name='LivingRoom_WallLight_0' type='point'>
       <pose frame=''>1.76956 -5.444370 2.2 0 -0 0</pose>
       <diffuse>0.24 0.24 0.24 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
@@ -728,8 +742,8 @@
       </attenuation>
       <cast_shadows>1</cast_shadows>
       <direction>0 0 -1</direction>
-    </light>
-    <light name='LivingRoom_WallLight_1' type='point'>
+    </light>-->
+<!--    <light name='LivingRoom_WallLight_1' type='point'>
       <pose frame=''>-0.13826 -5.444370 2.2 0 -0 0</pose>
       <diffuse>0.24 0.24 0.24 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
@@ -741,8 +755,8 @@
       </attenuation>
       <cast_shadows>1</cast_shadows>
       <direction>0 0 -1</direction>
-    </light>
-    <!--light name='TV_Light_0' type='point'>
+    </light>-->
+    <light name='TV_Light_0' type='point'>
       <pose frame=''>0.8269 -4.939577 1.1 0 -0 0</pose>
       <diffuse>0.31372 0.31372 0.34901 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
@@ -754,7 +768,7 @@
       </attenuation>
       <cast_shadows>1</cast_shadows>
       <direction>0 0 -1</direction>
-    </light-->
+    </light>
     <!--light name='BedRoom_Portrait_Light_0' type='spot'>
       <pose frame=''>-6.190379 -1.829697 1.5587 0.3 -0 0.0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
@@ -814,32 +828,20 @@
     </light>
 <!--door-->
 
-    <model name='hinged_door_0'>
-        <include>
-            <uri>model://hinged_door</uri>
-        </include>
-        <pose frame=''>-2.69235 -0.382552 2e-06 1e-06 -0 0</pose>
-	</model>
-    <model name='hinged_door_1'>
-        <include>
-            <uri>model://hinged_door</uri>
-        </include>
-        <pose frame=''>-2.69928 -3.62062 2e-06 1e-06 -0 0</pose>
-	</model>
 <!--charging_pile-->
-    <model name='charging_pile'>
+<!--    <model name='charging_pile'>
         <include>
             <uri>model://charging_pile</uri>
         </include>
         <pose frame=''>-5.153056 -5.326687 0.016504 1.57 0 1.57</pose>
-	</model>
+        </model>-->
 <!--wall_add-->
     <model name='wall_01'>
         <include>
             <uri>model://wall_01</uri>
         </include>
         <pose frame=''>0 0 0 0 -0 0</pose>
-	</model>
+        </model>
 
     <model name='wall_02'>
         <include>
@@ -853,12 +855,12 @@
         </include>
         <pose frame=''>0 0 0 0 -0 0</pose>
 	</model>
-    <model name='wall_04'>
+<!--    <model name='wall_04'>
         <include>
             <uri>model://wall_04</uri>
         </include>
         <pose frame=''>0 0 0 0 -0 0</pose>
-	</model>
+        </model>-->
 
     <model name='wall_05'>
         <include>
@@ -871,7 +873,7 @@
             <uri>model://wall_06</uri>
         </include>
         <pose frame=''>0 0 0 0 -0 0</pose>
-	</model>
+        </model>
 
 <!-- actor -->
     <!-- <actor name="actor">
